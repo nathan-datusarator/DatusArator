@@ -1,0 +1,17 @@
+﻿using DatusArator.Windows.Dialogs;
+using System;
+using System.Windows.Forms;
+
+namespace JsonViewer {
+  static class Program {
+    /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
+    [STAThread]
+    static void Main() {
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      Application.Run(new dlgJsonViewer());
+    }
+  }
+}
