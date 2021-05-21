@@ -310,5 +310,20 @@ namespace Toolbox.AuthenticVacations {
     private static void AddAttribute(XmlNode node, JsonWrapper result, string attr) {
       result[attr] = node.Attributes[attr]?.Value;
     }
+
+    public static string MapDestinations(string text) {
+      var result = new JsonWrapper();
+
+      foreach (var line in text.Split('\n')) {
+        var parts = line.Split('\t');
+        var dest = parts[1].Trim();
+        dest = dest.Substring(0, dest.Length - 1);
+        dest = dest.Substring(dest.LastIndexOf('/') + 1);
+
+        result[dest] = (parts[1].Contains("usa") ? "US:" : "") + parts[0];
+      }
+
+      return result.ToJsonString(true);
+    }
   }
 }

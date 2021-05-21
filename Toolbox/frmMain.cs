@@ -74,5 +74,9 @@ namespace Toolbox {
         txtResults.AppendText(text + nl);
       }
     }
+
+    private void btnDestinations_Click(object sender, EventArgs e) {
+      txtResults.Text = AV_Tools.MapDestinations(txtResults.Text);
+    }
   }
 }
