@@ -30,6 +30,9 @@ namespace DatusArator.Windows.Dialogs {
         json = json.Substring(1, json.Length - 2);
       }
 
+      if (json.StartsWith("["))
+        json = "{ data: " + json + " }";
+
       if (json.StartsWith("[")) {
         var parsed = JsonUtils.ParseJsonArray(json);
         fBase = parsed[0];

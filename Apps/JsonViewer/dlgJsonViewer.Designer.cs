@@ -23,7 +23,9 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dlgJsonViewer));
       this.pnlFooter = new System.Windows.Forms.Panel();
+      this.btnNewJson = new System.Windows.Forms.Button();
       this.btnClose = new System.Windows.Forms.Button();
       this.pnlLeft = new System.Windows.Forms.Panel();
       this.tvMain = new System.Windows.Forms.TreeView();
@@ -32,7 +34,6 @@
       this.txtSearch = new System.Windows.Forms.TextBox();
       this.panelControl2 = new System.Windows.Forms.Panel();
       this.txtJson = new System.Windows.Forms.TextBox();
-      this.btnNewJson = new System.Windows.Forms.Button();
       this.pnlFooter.SuspendLayout();
       this.pnlLeft.SuspendLayout();
       this.pnlSearch.SuspendLayout();
@@ -48,6 +49,15 @@
       this.pnlFooter.Name = "pnlFooter";
       this.pnlFooter.Size = new System.Drawing.Size(1016, 39);
       this.pnlFooter.TabIndex = 2;
+      // 
+      // btnNewJson
+      // 
+      this.btnNewJson.Location = new System.Drawing.Point(7, 6);
+      this.btnNewJson.Name = "btnNewJson";
+      this.btnNewJson.Size = new System.Drawing.Size(75, 23);
+      this.btnNewJson.TabIndex = 1;
+      this.btnNewJson.Text = "New Json";
+      this.btnNewJson.Click += new System.EventHandler(this.btnNewJson_Click);
       // 
       // btnClose
       // 
@@ -129,15 +139,6 @@
       this.txtJson.Size = new System.Drawing.Size(645, 597);
       this.txtJson.TabIndex = 0;
       // 
-      // btnNewJson
-      // 
-      this.btnNewJson.Location = new System.Drawing.Point(7, 6);
-      this.btnNewJson.Name = "btnNewJson";
-      this.btnNewJson.Size = new System.Drawing.Size(75, 23);
-      this.btnNewJson.TabIndex = 1;
-      this.btnNewJson.Text = "New Json";
-      this.btnNewJson.Click += new System.EventHandler(this.btnNewJson_Click);
-      // 
       // dlgJsonViewer
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +147,7 @@
       this.Controls.Add(this.panelControl2);
       this.Controls.Add(this.pnlLeft);
       this.Controls.Add(this.pnlFooter);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "dlgJsonViewer";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Json Viewer";
