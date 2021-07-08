@@ -109,7 +109,7 @@ namespace Toolbox.AuthenticVacations {
           index["nights"] = nights;
         }
 
-        for (int i = 7; i < row.Length; i++) {
+        for (int i = 8; i < row.Length; i++) {
           if (!string.IsNullOrEmpty(row[i])) {
             result?.AddToArray("interests", colMap[i]);
             index?.AddToArray("interests", colMap[i]);
