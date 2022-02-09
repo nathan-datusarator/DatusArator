@@ -1,14 +1,11 @@
 ﻿using System;
+using System.Net;
 using System.Windows.Forms;
 
 using Toolbox.AuthenticVacations;
 
 namespace Toolbox {
   public partial class frmMain : Form {
-    public static readonly string DIRECTORY = @"C:\Users\Nathan\Downloads\AuthenticVacations\";
-    public static readonly string FILE_NAME =
-      @"V.9 Reserve Wizard Templates & Tours Special Interests V.9 (2).xlsx";
-
     public readonly static string nl = Environment.NewLine;
     public frmMain() {
       InitializeComponent();
@@ -77,6 +74,9 @@ namespace Toolbox {
 
     private void btnDestinations_Click(object sender, EventArgs e) {
       txtResults.Text = AV_Tools.MapDestinations(txtResults.Text);
+    }
+
+    private void btnOneOff_Click(object sender, EventArgs e) {
     }
   }
 }

@@ -10,7 +10,7 @@ namespace Toolbox.AuthenticVacations {
   public static class AV_Tools {
     public static readonly string DIRECTORY = @"d:\Tools\quasar\av_reserve\src\assets\reference\";
     public static readonly string FILE_NAME =
-      @"Wizard Templates & Tours.xlsx";
+      @"TRIP PLANNER APP Templates & Tours.xlsx";
 
     public readonly static string nl = Environment.NewLine;
 
@@ -70,34 +70,35 @@ namespace Toolbox.AuthenticVacations {
       return wrapper.ToJsonString(true);
 
       void ParseRow(string[] row) {
-        if (string.IsNullOrEmpty(row[0].Trim()))
+        if (string.IsNullOrEmpty(row[4].Trim()))
           return;
 
-        var region = row[3].Trim();
+        var region = row[4].Trim();
         var isUSA = false;
         if (region == "USA") {
           isUSA = true;
-          region = row[4].Trim();
+          region = row[5].Trim();
           if (region.StartsWith("Calif"))
             region = "Wine Country";
         }
 
-        var id = row[0].Trim();
-        var name = row[1].Trim();
-        var nights = StringUtils.SafeStrToInt(row[2].Trim(), 21).Value;
-
-        if (wrapper.HasValue("index." + id + ".name")) {
-          Console.WriteLine("Duplicate Tour Found: " + id);
-          return;
-        }
-
-        var isScandanavia = region.Equals("Scandinavia");
-
         JsonWrapper result = null;
         JsonWrapper index = null;
 
-        if (!isScandanavia) {
-          result = wrapper.ExtendArray("tours." + region);
+        var id = row[0].Trim();
+        var isGuided = !string.IsNullOrEmpty(row[2]);
+
+        if (!string.IsNullOrEmpty(id) && !id.StartsWith("X", StringComparison.InvariantCultureIgnoreCase)) {
+          var name = row[1].Trim();
+          var nights = StringUtils.SafeStrToInt(row[3].Trim(), 21).Value;
+
+          if (wrapper.HasValue("index." + id + ".name")) {
+            Console.WriteLine("Duplicate Tour Found: " + id);
+            return;
+          }
+
+          var prefix = isGuided ? "guided" : "tours";
+          result = wrapper.ExtendArray(prefix + "." + region);
           result["id"] = id;
           result["name"] = name;
           result["nights"] = nights;
@@ -109,12 +110,14 @@ namespace Toolbox.AuthenticVacations {
           index["nights"] = nights;
         }
 
-        for (int i = 8; i < row.Length; i++) {
-          if (!string.IsNullOrEmpty(row[i])) {
-            result?.AddToArray("interests", colMap[i]);
-            index?.AddToArray("interests", colMap[i]);
+        if (!isGuided) {
+          for (int i = 9; i < row.Length; i++) {
+            if (!string.IsNullOrEmpty(row[i])) {
+              result?.AddToArray("interests", colMap[i]);
+              index?.AddToArray("interests", colMap[i]);
 
-            AddToInterestsMap(region, colMap[i]);
+              AddToInterestsMap(region, colMap[i]);
+            }
           }
         }
       }
