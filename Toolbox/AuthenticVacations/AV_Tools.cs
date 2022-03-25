@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-
-using DatusArator.Core.Json;
+﻿using DatusArator.Core.Json;
 using DatusArator.Core.Util;
 using DatusArator.Excel;
+
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using System.Xml;
 
 namespace Toolbox.AuthenticVacations {
   public static class AV_Tools {
@@ -65,6 +66,20 @@ namespace Toolbox.AuthenticVacations {
 
         foreach (var entry in item.Value)
           wrapper.AddToArray("interests." + item.Key, entry);
+      }
+
+      var missingInterests = new List<string>();
+      foreach (var key in wrapper.GetSubFields("tours"))
+        foreach (var tour in wrapper.GetArrayAsObjects("tours." + key)) {
+          if (tour.GetArrayAsList("interests").Count == 0)
+            missingInterests.Add(tour.Get("id") + ": " + tour.Get("name"));
+        }
+
+      if (missingInterests.Count > 0) {
+        var msgText = StringUtils.Join(missingInterests, Environment.NewLine);
+        if (MessageBox.Show(msgText, "Missing Interests List (OK to copy)", MessageBoxButtons.OKCancel) == DialogResult.OK) { 
+          Clipboard.SetText(msgText); 
+        }
       }
 
       return wrapper.ToJsonString(true);
