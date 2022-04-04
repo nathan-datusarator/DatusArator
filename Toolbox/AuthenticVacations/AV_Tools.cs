@@ -42,6 +42,22 @@ namespace Toolbox.AuthenticVacations {
       }
     }
 
+    private static void CompilePrivateTours(JsonWrapper wrapper) {
+      var allData = ExcelUtils.ToDictionary(DIRECTORY + FILE_NAME, false);
+      var data = allData["Private GroupChauffeur Tours"];
+
+      foreach (var row in data) {
+        if (row.Length > 0) {
+          var tour = new JsonWrapper(wrapper, "private." + row[0]);
+          tour["id"] = row[0];
+          tour["name"] = row[1];
+          tour["region"] = row[2];
+          tour["type"] = row[3];
+          tour["message"] = row[4];
+        }
+      }
+    }
+
     public static string CompileTours() {
       var allData = ExcelUtils.ToDictionary(DIRECTORY + FILE_NAME, false);
       var data = allData["ALL TOURS"];
@@ -77,10 +93,12 @@ namespace Toolbox.AuthenticVacations {
 
       if (missingInterests.Count > 0) {
         var msgText = StringUtils.Join(missingInterests, Environment.NewLine);
-        if (MessageBox.Show(msgText, "Missing Interests List (OK to copy)", MessageBoxButtons.OKCancel) == DialogResult.OK) { 
-          Clipboard.SetText(msgText); 
+        if (MessageBox.Show(msgText, "Missing Interests List (OK to copy)", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+          Clipboard.SetText(msgText);
         }
       }
+
+      CompilePrivateTours(wrapper);
 
       return wrapper.ToJsonString(true);
 

@@ -25,6 +25,7 @@
     private void InitializeComponent() {
       this.txtResults = new System.Windows.Forms.TextBox();
       this.pnlHeader = new System.Windows.Forms.Panel();
+      this.btnOneOff = new System.Windows.Forms.Button();
       this.btnDestinations = new System.Windows.Forms.Button();
       this.btnSpacingCSS = new System.Windows.Forms.Button();
       this.btnTourCompiler = new System.Windows.Forms.Button();
@@ -32,7 +33,6 @@
       this.btnInterests = new System.Windows.Forms.Button();
       this.btnUS = new System.Windows.Forms.Button();
       this.btnWorldMap = new System.Windows.Forms.Button();
-      this.btnOneOff = new System.Windows.Forms.Button();
       this.pnlHeader.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -61,6 +61,16 @@
       this.pnlHeader.Name = "pnlHeader";
       this.pnlHeader.Size = new System.Drawing.Size(853, 77);
       this.pnlHeader.TabIndex = 2;
+      // 
+      // btnOneOff
+      // 
+      this.btnOneOff.Location = new System.Drawing.Point(479, 12);
+      this.btnOneOff.Name = "btnOneOff";
+      this.btnOneOff.Size = new System.Drawing.Size(75, 23);
+      this.btnOneOff.TabIndex = 8;
+      this.btnOneOff.Text = "One Off";
+      this.btnOneOff.UseVisualStyleBackColor = true;
+      this.btnOneOff.Click += new System.EventHandler(this.btnOneOff_Click);
       // 
       // btnDestinations
       // 
@@ -134,16 +144,6 @@
       this.btnWorldMap.Text = "World Map";
       this.btnWorldMap.UseVisualStyleBackColor = true;
       this.btnWorldMap.Click += new System.EventHandler(this.btnWorldMap_Click);
-      // 
-      // btnOneOff
-      // 
-      this.btnOneOff.Location = new System.Drawing.Point(479, 12);
-      this.btnOneOff.Name = "btnOneOff";
-      this.btnOneOff.Size = new System.Drawing.Size(75, 23);
-      this.btnOneOff.TabIndex = 8;
-      this.btnOneOff.Text = "One Off";
-      this.btnOneOff.UseVisualStyleBackColor = true;
-      this.btnOneOff.Click += new System.EventHandler(this.btnOneOff_Click);
       // 
       // frmMain
       // 
