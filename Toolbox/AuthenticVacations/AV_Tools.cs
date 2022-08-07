@@ -105,6 +105,8 @@ namespace Toolbox.AuthenticVacations {
       void ParseRow(string[] row) {
         if (string.IsNullOrEmpty(row[4].Trim()))
           return;
+        if ("so".Equals(row[2]?.Trim()))
+          return;
 
         var region = row[4].Trim();
         var isUSA = false;

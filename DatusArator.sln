@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30309.148
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatusArator.Core", "Core\DatusArator.Core\DatusArator.Core.csproj", "{DCE42BBE-0502-4C7E-B4C2-342A5B2BA359}"
 EndProject
@@ -14,6 +14,35 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatusArator.Excel", "Core\DatusArator.Excel\DatusArator.Excel.csproj", "{DFFD3EEB-51DE-462E-9C45-B3AFC21DD76C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonViewer", "Apps\JsonViewer\JsonViewer.csproj", "{D8E69C74-5CE7-4B5B-B2AB-72DB3EDA83A1}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "spa", "..\..\Tools\quasar\av_reserve\dist\spa\", "{A5C77E15-39BA-4E74-BC75-26ABD1D59384}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57702"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\Tools\quasar\av_reserve\dist\spa\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57702\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57702"
+		Release.AspNetCompiler.PhysicalPath = "..\..\Tools\quasar\av_reserve\dist\spa\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57702\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57702"
+		SlnRelativePath = "..\..\Tools\quasar\av_reserve\dist\spa\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatusArator.DB.Postgres", "DB\DatusArator.DB.Postgres\DatusArator.DB.Postgres.csproj", "{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{38B95F9E-9753-4ED3-AB7C-6E375C1FC188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatusArator.DB.SqlServer", "DB\DatusArator.DB.SqlServer\DatusArator.DB.SqlServer.csproj", "{494BDE3F-063C-49D3-BFA6-369BC7934CA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatusArator.DB.Lucene", "Core\DatusArator.Lucene\DatusArator.DB.Lucene.csproj", "{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +114,54 @@ Global
 		{D8E69C74-5CE7-4B5B-B2AB-72DB3EDA83A1}.Release|x64.Build.0 = Release|x64
 		{D8E69C74-5CE7-4B5B-B2AB-72DB3EDA83A1}.Release|x86.ActiveCfg = Release|x86
 		{D8E69C74-5CE7-4B5B-B2AB-72DB3EDA83A1}.Release|x86.Build.0 = Release|x86
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Debug|x64.Build.0 = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Debug|x86.Build.0 = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Release|x64.ActiveCfg = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Release|x64.Build.0 = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Release|x86.ActiveCfg = Debug|Any CPU
+		{A5C77E15-39BA-4E74-BC75-26ABD1D59384}.Release|x86.Build.0 = Debug|Any CPU
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Debug|x64.ActiveCfg = Debug|x64
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Debug|x64.Build.0 = Debug|x64
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Debug|x86.ActiveCfg = Debug|x86
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Debug|x86.Build.0 = Debug|x86
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Release|x64.ActiveCfg = Release|x64
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Release|x64.Build.0 = Release|x64
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Release|x86.ActiveCfg = Release|x86
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721}.Release|x86.Build.0 = Release|x86
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Debug|x64.ActiveCfg = Debug|x64
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Debug|x64.Build.0 = Debug|x64
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Debug|x86.ActiveCfg = Debug|x86
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Debug|x86.Build.0 = Debug|x86
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Release|x64.ActiveCfg = Release|x64
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Release|x64.Build.0 = Release|x64
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Release|x86.ActiveCfg = Release|x86
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5}.Release|x86.Build.0 = Release|x86
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Debug|x64.ActiveCfg = Debug|x64
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Debug|x64.Build.0 = Debug|x64
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Debug|x86.ActiveCfg = Debug|x86
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Debug|x86.Build.0 = Debug|x86
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Release|x64.ActiveCfg = Release|x64
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Release|x64.Build.0 = Release|x64
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Release|x86.ActiveCfg = Release|x86
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +170,9 @@ Global
 		{DCE42BBE-0502-4C7E-B4C2-342A5B2BA359} = {844F1F9F-33FD-4270-A42C-9DBDEF3F8277}
 		{AE533445-CEDC-476D-B472-4B889F662287} = {844F1F9F-33FD-4270-A42C-9DBDEF3F8277}
 		{DFFD3EEB-51DE-462E-9C45-B3AFC21DD76C} = {844F1F9F-33FD-4270-A42C-9DBDEF3F8277}
+		{44403F6C-FEB5-4B6B-8133-8FC8D5FD6721} = {38B95F9E-9753-4ED3-AB7C-6E375C1FC188}
+		{494BDE3F-063C-49D3-BFA6-369BC7934CA5} = {38B95F9E-9753-4ED3-AB7C-6E375C1FC188}
+		{3E96AFD8-1A31-4A06-8A0B-CAAE75A2BC7E} = {38B95F9E-9753-4ED3-AB7C-6E375C1FC188}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91E2E474-5C54-4D66-B812-C2EDD7214782}

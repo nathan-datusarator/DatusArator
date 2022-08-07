@@ -90,13 +90,13 @@
     <Compile Include="SqlServerConnection.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatusArator.Core\DatusArator.Core.csproj">
-      <Project>{e9a1ee2b-3e44-4a7f-9e26-90a2a429167d}</Project>
-      <Name>DatusArator.Core</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\Core\DatusArator.Core\DatusArator.Core.csproj">
+      <Project>{dce42bbe-0502-4c7e-b4c2-342a5b2ba359}</Project>
+      <Name>DatusArator.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
