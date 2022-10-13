@@ -116,8 +116,18 @@ namespace DatusArator.Windows.Dialogs {
         parentPath = current;
       }
 
-      if (node != null)
-        node.Text = node.Text + " [" + StringUtils.Shorten(value.ToString(), 20) + "]";
+      if (node != null) {
+        var display = StringUtils.Shorten(value.ToString(), 20);
+
+        var key = parts[parts.Length - 1];
+        if (key.Equals("D", StringComparison.InvariantCultureIgnoreCase) || key.EndsWith("Date", StringComparison.InvariantCultureIgnoreCase) || key.EndsWith("TS", StringComparison.InvariantCultureIgnoreCase)) {
+          var date = value.GetAsDate();
+          if (date != null)
+            display = date.Value.ToUniversalTime().ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
+        }
+
+        node.Text = node.Text + " [" + display + "]";
+      }
     }
     #endregion
 
