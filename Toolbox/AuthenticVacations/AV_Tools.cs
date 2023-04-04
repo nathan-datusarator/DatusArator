@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace Toolbox.AuthenticVacations {
   public static class AV_Tools {
@@ -124,8 +123,6 @@ namespace Toolbox.AuthenticVacations {
         var id = row[0].Trim();
         var isGuided = !string.IsNullOrEmpty(row[2]);
 
-        var isSpecial = id.Equals("825");
-
         if (!string.IsNullOrEmpty(id) && !id.StartsWith("X", StringComparison.InvariantCultureIgnoreCase)) {
           var name = row[1].Trim();
           var nights = StringUtils.SafeStrToInt(row[3].Trim(), 21).Value;
@@ -146,28 +143,15 @@ namespace Toolbox.AuthenticVacations {
           index["destination"] = isUSA ? "United States" : region;
           index["subDestination"] = isUSA ? region : "";
           index["nights"] = nights;
-
-          if (isSpecial) {
-            result = wrapper.ExtendArray("guided.Ireland");
-            result["id"] = id;
-            result["name"] = name;
-            result["nights"] = nights;
-
-            result = wrapper.ExtendArray("guided.Scotland");
-            result["id"] = id;
-            result["name"] = name;
-            result["nights"] = nights;
-          }
+          index["guided"] = isGuided;
         }
 
-        if (!isGuided) {
-          for (int i = 9; i < row.Length; i++) {
-            if (!string.IsNullOrEmpty(row[i])) {
-              result?.AddToArray("interests", colMap[i]);
-              index?.AddToArray("interests", colMap[i]);
+        for (int i = 9; i < row.Length; i++) {
+          if (!string.IsNullOrEmpty(row[i])) {
+            result?.AddToArray("interests", colMap[i]);
+            index?.AddToArray("interests", colMap[i]);
 
-              AddToInterestsMap(region, colMap[i]);
-            }
+            AddToInterestsMap(region, colMap[i]);
           }
         }
       }
