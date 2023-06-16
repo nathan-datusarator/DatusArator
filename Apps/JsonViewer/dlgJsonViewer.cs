@@ -82,13 +82,18 @@ namespace DatusArator.Windows.Dialogs {
     private readonly Dictionary<string, TreeNode> fParentNodes = new Dictionary<string, TreeNode>();
 
     private void ParseJson() {
-      tvMain.Nodes.Clear();
-      fParentNodes.Clear();
+      tvMain.BeginUpdate();
+      try {
+        tvMain.Nodes.Clear();
+        fParentNodes.Clear();
 
-      var values = fWrapper.GetValues();
+        var values = fWrapper.GetValues();
 
-      foreach (var value in values)
-        Put(value.Key, value.Value);
+        foreach (var value in values)
+          Put(value.Key, value.Value);
+      } finally {
+        tvMain.EndUpdate();
+      }
     }
 
     private void Put(string path, TypedBasicObject value) {

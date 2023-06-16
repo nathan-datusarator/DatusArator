@@ -27,7 +27,7 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.btnOk = new System.Windows.Forms.Button();
       this.btnClose = new System.Windows.Forms.Button();
-      this.memMain = new System.Windows.Forms.TextBox();
+      this.memMain = new System.Windows.Forms.RichTextBox();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -36,20 +36,18 @@
       this.panel1.Controls.Add(this.btnOk);
       this.panel1.Controls.Add(this.btnClose);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panel1.Location = new System.Drawing.Point(0, 908);
-      this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+      this.panel1.Location = new System.Drawing.Point(0, 472);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(1868, 75);
+      this.panel1.Size = new System.Drawing.Size(934, 39);
       this.panel1.TabIndex = 1;
       // 
       // btnOk
       // 
       this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.btnOk.Location = new System.Drawing.Point(1550, 12);
-      this.btnOk.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+      this.btnOk.Location = new System.Drawing.Point(775, 6);
       this.btnOk.Name = "btnOk";
-      this.btnOk.Size = new System.Drawing.Size(150, 44);
+      this.btnOk.Size = new System.Drawing.Size(75, 23);
       this.btnOk.TabIndex = 1;
       this.btnOk.Text = "OK";
       // 
@@ -57,10 +55,9 @@
       // 
       this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnClose.Location = new System.Drawing.Point(1708, 12);
-      this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+      this.btnClose.Location = new System.Drawing.Point(854, 6);
       this.btnClose.Name = "btnClose";
-      this.btnClose.Size = new System.Drawing.Size(150, 44);
+      this.btnClose.Size = new System.Drawing.Size(75, 23);
       this.btnClose.TabIndex = 0;
       this.btnClose.Text = "Close";
       // 
@@ -68,30 +65,26 @@
       // 
       this.memMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.memMain.Location = new System.Drawing.Point(0, 0);
-      this.memMain.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-      this.memMain.MaxLength = 3276700;
-      this.memMain.Multiline = true;
       this.memMain.Name = "memMain";
-      this.memMain.Size = new System.Drawing.Size(1868, 908);
-      this.memMain.TabIndex = 0;
+      this.memMain.Size = new System.Drawing.Size(934, 472);
+      this.memMain.TabIndex = 2;
+      this.memMain.Text = "";
       // 
       // dlgMemo
       // 
       this.AcceptButton = this.btnOk;
-      this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.btnClose;
-      this.ClientSize = new System.Drawing.Size(1868, 983);
+      this.ClientSize = new System.Drawing.Size(934, 511);
       this.Controls.Add(this.memMain);
       this.Controls.Add(this.panel1);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-      this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
       this.Name = "dlgMemo";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "dlgMemo";
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
@@ -100,6 +93,6 @@
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Button btnClose;
     private System.Windows.Forms.Button btnOk;
-    private System.Windows.Forms.TextBox memMain;
+    private System.Windows.Forms.RichTextBox memMain;
   }
 }

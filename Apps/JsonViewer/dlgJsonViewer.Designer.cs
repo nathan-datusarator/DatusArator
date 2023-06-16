@@ -33,7 +33,7 @@
       this.btnSearch = new System.Windows.Forms.Button();
       this.txtSearch = new System.Windows.Forms.TextBox();
       this.panelControl2 = new System.Windows.Forms.Panel();
-      this.txtJson = new System.Windows.Forms.TextBox();
+      this.txtJson = new System.Windows.Forms.RichTextBox();
       this.pnlFooter.SuspendLayout();
       this.pnlLeft.SuspendLayout();
       this.pnlSearch.SuspendLayout();
@@ -133,11 +133,10 @@
       // 
       this.txtJson.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtJson.Location = new System.Drawing.Point(0, 0);
-      this.txtJson.Multiline = true;
       this.txtJson.Name = "txtJson";
-      this.txtJson.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtJson.Size = new System.Drawing.Size(645, 597);
       this.txtJson.TabIndex = 0;
+      this.txtJson.Text = "";
       // 
       // dlgJsonViewer
       // 
@@ -156,7 +155,6 @@
       this.pnlSearch.ResumeLayout(false);
       this.pnlSearch.PerformLayout();
       this.panelControl2.ResumeLayout(false);
-      this.panelControl2.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -168,10 +166,10 @@
     private System.Windows.Forms.Panel pnlLeft;
     private System.Windows.Forms.TreeView tvMain;
     private System.Windows.Forms.Panel panelControl2;
-    private System.Windows.Forms.TextBox txtJson;
     private System.Windows.Forms.Panel pnlSearch;
     private System.Windows.Forms.TextBox txtSearch;
     private System.Windows.Forms.Button btnSearch;
     private System.Windows.Forms.Button btnNewJson;
+    private System.Windows.Forms.RichTextBox txtJson;
   }
 }
