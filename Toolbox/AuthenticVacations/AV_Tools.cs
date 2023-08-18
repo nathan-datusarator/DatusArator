@@ -126,6 +126,7 @@ namespace Toolbox.AuthenticVacations {
         if (!string.IsNullOrEmpty(id) && !id.StartsWith("X", StringComparison.InvariantCultureIgnoreCase)) {
           var name = row[1].Trim();
           var nights = StringUtils.SafeStrToInt(row[3].Trim(), 21).Value;
+          var exclusive = !string.IsNullOrEmpty(row[8]);
 
           if (wrapper.HasValue("index." + id + ".name")) {
             Console.WriteLine("Duplicate Tour Found: " + id);
@@ -143,10 +144,13 @@ namespace Toolbox.AuthenticVacations {
           index["destination"] = isUSA ? "United States" : region;
           index["subDestination"] = isUSA ? region : "";
           index["nights"] = nights;
-          index["guided"] = isGuided;
+          if (isGuided)
+            index["guided"] = true;
+          if (exclusive)
+            index["exclusive"] = true;
         }
 
-        for (int i = 9; i < row.Length; i++) {
+        for (int i = 10; i < row.Length; i++) {
           if (!string.IsNullOrEmpty(row[i])) {
             result?.AddToArray("interests", colMap[i]);
             index?.AddToArray("interests", colMap[i]);
