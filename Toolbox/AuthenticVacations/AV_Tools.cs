@@ -9,9 +9,9 @@ using System.Xml;
 
 namespace Toolbox.AuthenticVacations {
   public static class AV_Tools {
-    public static readonly string DIRECTORY = @"d:\Tools\quasar\av_reserve\src\assets\reference\";
+    public static readonly string DIRECTORY = @"D:\Tools\quasar\authentic-vacations-v2\src\assets\reference\";
     public static readonly string FILE_NAME =
-      @"TRIP PLANNER APP Templates & Tours.xlsx";
+      @"TPA-Tours_May-2024.xlsx";
 
     public readonly static string nl = Environment.NewLine;
 
