@@ -1,0 +1,10 @@
+﻿<Window x:Class="SayMyNewsReally.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SpeechTools" Height="922" Width="834">
+  <Grid>
+    <TextBox Margin="12,42,12,12" Name="txtMain" Text="Paste Text here to Speak it." SnapsToDevicePixels="True" AcceptsReturn="True" AcceptsTab="False" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+    <Button Content="Go" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="btnGo" VerticalAlignment="Top" Width="75" Click="btnGo_Click" />
+    <Button Content="Paste" Height="23" HorizontalAlignment="Left" Margin="93,12,0,0" Name="btnPaste" VerticalAlignment="Top" Width="75" Click="btnPaste_Click" />
+  </Grid>
+</Window>
